@@ -3,4 +3,10 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="colorPlayPause">#76FF03</color>
+    <color name="colorShuffleButton">#F44336</color>
+    <color name="colorRepeatButton">#9C27B0</color>
+    <color name="colorSkipBackwardForward">#1E88E5</color>
+    <color name="colorPreviousNext">#E65100</color>
 </resources>

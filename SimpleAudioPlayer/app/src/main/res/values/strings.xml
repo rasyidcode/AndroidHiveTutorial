@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SimpleAudioPlayer</string>
+    <string name="text_playlist">Playlist</string>
 </resources>

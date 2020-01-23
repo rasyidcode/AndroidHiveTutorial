@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true" android:state_pressed="true">
+        <layer-list>
+            <item>
+                <shape android:shape="oval">
+                    <size android:width="30dp" android:height="30dp" />
+                    <solid android:color="@color/colorPrimary" />
+                    <stroke android:width="2.5dp" android:color="@color/colorPreviousNext" />
+                    <padding android:bottom="8dp" android:left="8dp" android:right="8dp" android:top="8dp" />
+                </shape>
+            </item>
+            <item android:drawable="@drawable/ic_skip_previous_white_24dp" />
+        </layer-list>
+    </item>
+
+    <item>
+        <layer-list>
+            <item>
+                <shape android:shape="oval">
+                    <size android:width="30dp" android:height="30dp" />
+                    <solid android:color="@android:color/transparent" />
+                    <stroke android:width="2.5dp" android:color="@color/colorPreviousNext" />
+                    <padding android:bottom="8dp" android:left="8dp" android:right="8dp" android:top="8dp" />
+                </shape>
+            </item>
+            <item android:drawable="@drawable/ic_skip_previous_white_24dp" />
+        </layer-list>
+    </item>
+</selector>
