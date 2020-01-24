@@ -1,6 +1,7 @@
 package me.jamilalrasyidis.myapplication
 
 import android.app.Activity
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.os.Environment
@@ -25,9 +26,7 @@ class PlaylistActivity : AppCompatActivity() {
 
     private val adapter by lazy { PlaylistAdapter() }
 
-    private val songList by lazy {
-        SongManager.getSongFromStorage(SongManager.rootPath)
-    }
+    private lateinit var songList: ArrayList<HashMap<String, String>>
 
     private val itemClickListener by lazy {
         object : ItemClickListener {
@@ -38,19 +37,39 @@ class PlaylistActivity : AppCompatActivity() {
                 setResult(Activity.RESULT_OK, intent)
                 finish()
             }
+        }
+    }
 
+    @Suppress("DEPRECATION")
+    private val progressDialog by lazy {
+        ProgressDialog(this).apply {
+            setMessage("Fetch your local audio file...")
+            setProgressStyle(ProgressDialog.STYLE_SPINNER)
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setupAudioList()
+    }
 
-        songList?.let {
-            adapter.songList = it
-        }
-        adapter.itemClickListener = itemClickListener
-        binding.listSong.layoutManager = LinearLayoutManager(this)
-        binding.listSong.adapter = adapter
+    private fun setupAudioList() {
+        progressDialog.show()
+        Thread {
+            SongManager.getSongFromStorage(SongManager.rootPath)?.let {
+                songList = it
+            }
+
+            runOnUiThread {
+                adapter.songList = songList
+                adapter.itemClickListener = itemClickListener
+
+                binding.listSong.layoutManager = LinearLayoutManager(this)
+                binding.listSong.adapter = adapter
+
+                progressDialog.dismiss()
+            }
+        }.start()
     }
 
 }

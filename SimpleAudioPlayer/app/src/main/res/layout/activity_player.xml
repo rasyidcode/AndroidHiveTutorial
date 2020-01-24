@@ -14,19 +14,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
             android:textSize="20sp"
             android:textStyle="bold"
             tools:text="Nuthin But A G Thang" />
 
         <ImageView
-            android:id="@+id/image_thumb"
+            android:id="@+id/image_song_thumb"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
             android:layout_marginBottom="16dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/song_no_thumbnail"
             android:contentDescription="@null"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_background" />
+            android:scaleType="centerCrop" />
 
         <!-- Shuffle and Repeat -->
         <LinearLayout
@@ -134,7 +139,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:background="@drawable/button_play_pause"
-                android:checked="false" />
+                android:checked="true" />
 
             <ImageButton
                 android:id="@+id/button_next"

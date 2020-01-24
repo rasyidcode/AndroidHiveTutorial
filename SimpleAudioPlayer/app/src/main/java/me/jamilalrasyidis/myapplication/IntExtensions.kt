@@ -4,8 +4,10 @@ package me.jamilalrasyidis.myapplication
  * Created by Jamil on 1/22/2020.
  */
 
-fun Int.progressToTimer(totalDuration: Int): Int {
-    return ((this / 100) * (totalDuration / 1000)) * 1000
+fun Int.progressToTimer(totalMillis: Int): Int {
+    val totalSecond = totalMillis / 1000
+    val currentSecond = (this.toDouble() / 100) * totalSecond
+    return (currentSecond * 1000).toInt()
 }
 
 fun Int.toProperTimer(): String {

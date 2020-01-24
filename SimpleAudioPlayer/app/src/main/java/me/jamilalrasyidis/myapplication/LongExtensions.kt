@@ -4,7 +4,7 @@ package me.jamilalrasyidis.myapplication
  * Created by Jamil on 1/22/2020.
  */
 
-fun Long.progressPercentage(totalDuration: Long) : Int {
+fun Long.timerToProgress(totalDuration: Long) : Int {
     val currentSeconds = this / 1000
     val totalSeconds = totalDuration / 1000
     val percentage = (currentSeconds.toDouble() / totalSeconds) * 100
