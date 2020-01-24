@@ -2,7 +2,7 @@
 
 Article for this app : [here](https://www.androidhive.info/2012/03/android-building-audio-player-tutorial/)
 
-<p>I remake the application on that tutorial but using kotling language.</p>
+<p>I remake the application on that tutorial but using kotlin language.</p>
 
 ### Screenshot
 
