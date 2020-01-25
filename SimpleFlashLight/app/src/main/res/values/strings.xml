@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SimpleFlashLight</string>
+    <string name="text_status_off">Flash is OFF</string>
+    <string name="text_status_on">Flash is ON</string>
 </resources>
